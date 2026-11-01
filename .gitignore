@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+*service-account*.json
+*firebase-adminsdk*.json
+frontend/dist/
+data/chat_connection_check.json
+.DS_Store

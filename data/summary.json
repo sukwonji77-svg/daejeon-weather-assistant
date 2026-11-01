@@ -1,0 +1,102 @@
+{
+  "city": "대전",
+  "period": "2025-01-01 ~ 2025-12-31",
+  "count": 365,
+  "unit": "°C",
+  "metric": "일평균기온",
+  "metrics": {
+    "average": 13.97,
+    "max": 31.4,
+    "min": -7.7
+  },
+  "warmest_dates": [
+    "2025-07-27",
+    "2025-07-28"
+  ],
+  "coldest_dates": [
+    "2025-01-09"
+  ],
+  "monthly": [
+    {
+      "month": "2025-01",
+      "count": 31,
+      "average": -0.16
+    },
+    {
+      "month": "2025-02",
+      "count": 28,
+      "average": -0.88
+    },
+    {
+      "month": "2025-03",
+      "count": 31,
+      "average": 6.98
+    },
+    {
+      "month": "2025-04",
+      "count": 30,
+      "average": 13.25
+    },
+    {
+      "month": "2025-05",
+      "count": 31,
+      "average": 17.82
+    },
+    {
+      "month": "2025-06",
+      "count": 30,
+      "average": 23.52
+    },
+    {
+      "month": "2025-07",
+      "count": 31,
+      "average": 27.97
+    },
+    {
+      "month": "2025-08",
+      "count": 31,
+      "average": 27.62
+    },
+    {
+      "month": "2025-09",
+      "count": 30,
+      "average": 23.23
+    },
+    {
+      "month": "2025-10",
+      "count": 31,
+      "average": 16.88
+    },
+    {
+      "month": "2025-11",
+      "count": 30,
+      "average": 8.45
+    },
+    {
+      "month": "2025-12",
+      "count": 31,
+      "average": 1.98
+    }
+  ],
+  "trend": {
+    "comparison": "2025년 12월 평균 - 11월 평균",
+    "difference_celsius": -6.47,
+    "direction": "하락"
+  },
+  "source": {
+    "provider": "Open-Meteo",
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=36.3504&longitude=127.3845&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=Asia%2FSeoul",
+    "docs": "https://open-meteo.com/en/docs/historical-weather-api",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "requested_coordinates": {
+      "latitude": 36.3504,
+      "longitude": 127.3845
+    },
+    "returned_grid_coordinates": {
+      "latitude": 36.309315,
+      "longitude": 127.38281
+    },
+    "note": "대전 대표 좌표에 대응하는 격자 재분석 데이터입니다. 기상청 특정 관측소 실측치나 대전 전역 평균이 아닙니다."
+  }
+}
