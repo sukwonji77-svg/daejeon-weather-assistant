@@ -29,9 +29,9 @@ Python 3.13 / FastAPI / Pydantic / Firebase Firestore / OpenAI Responses API / H
 
 | 항목 | 주소 |
 |---|---|
-| 프론트엔드 (Vercel) | 배포 후 추가 |
-| 백엔드 API (Render) | 배포 후 추가 |
-| Swagger UI | Render 주소 뒤 `/docs` |
+| 프론트엔드 (Vercel) | https://daejeon-weather-assistant-frontend.vercel.app/ |
+| 백엔드 API (Render) | https://daejeon-weather-assistant.onrender.com/ |
+| Swagger UI | https://daejeon-weather-assistant.onrender.com/docs |
 
 접속 암호는 코드나 README에 기재하지 않고 평가자에게 별도로 전달합니다. 이 앱은 동일한 기록을 사용하는 개인 실습용 서비스입니다.
 
@@ -112,16 +112,34 @@ Vercel에는 API 키, Firebase 인증 JSON, APP_ACCESS_TOKEN 값을 넣지 않�
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-데이터·채팅·웹 제공·접속 보호 검사 20개를 확인했습니다. 자동 검사는 실제 저장소를 변경하거나 GPT를 호출하지 않습니다. 실제 Firestore CRUD, GPT 답변, 대화 저장·불러오기는 로컬 실습에서도 확인했습니다. Render/Vercel 배포 후에는 해당 URL에서 다시 점검합니다.
+데이터·채팅·웹 제공·접속 보호 검사 20개를 확인했습니다. 자동 검사는 실제 저장소를 변경하거나 GPT를 호출하지 않습니다. 실제 Firestore CRUD, GPT 답변, 대화 저장·불러오기는 로컬 실습에서도 확인했습니다.
+
+Render와 Vercel 배포 후 실제 웹 화면에서 365건, 연평균 13.97℃, 최고 일평균 31.4℃, 최저 일평균 -7.7℃, 월별 그래프를 확인했습니다. 사용자가 전송한 질문에 GPT가 2025년 1월 9일과 -7.7℃로 답하고 저장된 것을 확인했습니다. 날짜 검색, 수정 입력 창 표시, 기존 대화 불러오기도 배포된 화면에서 확인했습니다. 증빙 캡처를 만드는 동안에는 원본 기온을 변경하지 않았으며 GPT를 추가 호출하지 않았습니다.
 
 GPT 출력 최대 600토큰, 최근 5회 대화만 전달, 질문 최대 2000자, 프로세스당 분당 10회, 자동 재요청 없음으로 설정합니다. 이는 사용료의 절대 상한을 보장하지 않으므로 계정 사용량도 확인합니다.
 
 ## 제출 화면
 
-배포 후 다음 캡처를 README에 추가합니다.
+### 1. 데이터 기반 AI 채팅
 
-1. 데이터 요약과 실제 질문·답변이 함께 보이는 채팅 화면
-2. 데이터 추가·수정·삭제 중 한 동작이 확인되는 관리 화면
-3. 이전 대화를 선택해 메시지를 다시 불러온 화면
+기온 요약과 그래프, 실제 질문과 GPT 답변, 대화 저장 상태를 함께 확인할 수 있습니다.
 
-서비스 주소와 캡처 추가 전까지는 제출 문서 준비 단계입니다.
+![데이터 요약과 실제 GPT 답변](screenshots/01-chat.jpg)
+
+### 2. 데이터 관리
+
+실제 Firestore 기록 365건 중 `2025-01-09`를 검색해 일평균기온 -7.7℃와 출처 메모를 조회했습니다. 추가 입력란과 수정·삭제 버튼도 함께 표시됩니다.
+
+![데이터 조회와 날짜 검색](screenshots/02-data-management.jpg)
+
+수정 버튼을 눌러 기존 데이터가 입력란에 표시되는 것을 확인한 화면입니다. 이 캡처에서는 원본을 보존하기 위해 저장하지 않고 취소했습니다.
+
+![기존 기록의 수정 입력 창](screenshots/02b-edit-dialog.jpg)
+
+### 3. 대화 기록 불러오기
+
+왼쪽 목록에서 이전 대화를 선택해 질문과 답변이 다시 표시되고, 상단에 `저장된 대화를 불러왔습니다` 안내가 나타난 화면입니다.
+
+![저장된 대화 불러오기](screenshots/03-conversation-reload.jpg)
+
+서비스에 접속하려면 APP_ACCESS_TOKEN으로 설정한 접속 암호가 필요합니다. 평가자에게 암호와 비공개 저장소 열람 권한을 별도로 전달합니다. API 키와 Firebase 인증 정보는 제출하지 않습니다.
